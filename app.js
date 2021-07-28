@@ -18,21 +18,21 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
-const session = require("express-session");
+// const session = require("express-session");
 
-app.use(
-  session({
-    resave: true,
-    saveUninitialized: true,
-    secret: process.env.SESSION_SECRET,
-    cookie: {
-      sameSite: true, //frontend backend both run on localhost
-      httpOnly: true, //we are not using https
-      maxAge: 60000, //session time
-    },
-    rolling: true,
-  })
-);
+// app.use(
+//   session({
+//     resave: true,
+//     saveUninitialized: true,
+//     secret: process.env.SESSION_SECRET,
+//     cookie: {
+//       sameSite: true, //frontend backend both run on localhost
+//       httpOnly: true, //we are not using https
+//       maxAge: 60000, //session time
+//     },
+//     rolling: true,
+//   })
+// );
 
 // default value for title local
 const projectName = "project-management-server";

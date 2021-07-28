@@ -1,1 +1,0 @@
-# noa-assistant-server

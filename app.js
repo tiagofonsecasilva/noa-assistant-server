@@ -19,16 +19,17 @@ const app = express();
 require("./config")(app);
 
 // const session = require("express-session");
-
+// app.set("trust proxy", 1)
 // app.use(
 //   session({
 //     resave: true,
 //     saveUninitialized: true,
 //     secret: process.env.SESSION_SECRET,
 //     cookie: {
-//       sameSite: true, //frontend backend both run on localhost
-//       httpOnly: true, //we are not using https
+//       sameSite: "none", //frontend backend both run on localhost
+//       httpOnly: false, //we are not using https
 //       maxAge: 60000, //session time
+        // secure: true
 //     },
 //     rolling: true,
 //   })

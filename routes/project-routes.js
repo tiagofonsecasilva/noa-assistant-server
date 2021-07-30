@@ -21,7 +21,7 @@ router.post("/upload", fileUpload.single("image"), (req, res) => {
 });
 
 //Get all projects
-router.get("/projects", async (req, res) => {
+router.get("/projects2", async (req, res) => {
   try {
     const allProjects = await Project.find();
     res.status(200).json(allProjects);

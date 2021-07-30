@@ -55,8 +55,11 @@ app.use("/api", auth);
 const course = require("./routes/course-routes");
 app.use("/api", course);
 
-const newsTec = require("./routes/news-routes");
+const newsTec = require("./routes/news-API-routes");
 app.use("/api", newsTec);
+
+const news = require("./routes/news-routes");
+app.use("/api", news);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

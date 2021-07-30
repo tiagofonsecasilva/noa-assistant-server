@@ -1,16 +1,18 @@
-const express = require('express');
-const axios=require("axios");
-const { response } = require('express')
+const express = require("express");
 const router = express.Router();
+const News = require("../models/News.model");
+const fileUpload = require("../config/cloudinary");
 
-router.get("/news", async (req, res, next) => {
-
-try {
-    const response = await axios.get("https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=989b144b80a349acbf503349fc783ad9");
-    res.status(200).json(response.data);
+//Get all courses
+router.get("/news", async (req, res) => {
+  try {
+    const allNews = await News.find();
+    res.status(200).json(allNews);
   } catch (e) {
     res.status(500).json({ message: `error occurred ${e}` });
   }
-})
+});
 
-module.exports=router;
+
+
+module.exports = router;
